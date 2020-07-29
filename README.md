@@ -1,1 +1,1 @@
-"# rus_anonym.github.io" 
+# rus_anonym.github.io
