@@ -3,10 +3,7 @@
 
 <script>
 	DarkReader.setFetchMethod(window.fetch)
-	DarkReader.auto({
-		brightness: 100,
-		contrast: 95
-	});
+	DarkReader.auto()
 </script>
 
 <html>
@@ -321,6 +318,10 @@
 		var tooltip = document.getElementById("emailToolTip");
 		tooltip.innerHTML = "Copy to clipboard";
 	}
+
+	document.addEventListener("DOMContentLoaded", function (event) {
+		DarkReader.auto()
+	});
 </script>
 
 </html>
