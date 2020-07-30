@@ -15,6 +15,7 @@
 	<meta charset="utf-8" />
 	<title>rus_anonym</title>
 	<link rel="shortcut icon" href="/images/16k.ico" type="image/x-icon">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
 	<style type="text/css">
 		@import "/public/buttons.css";
 
@@ -282,7 +283,15 @@
 			</div>
 		</div>
 		<h2>E-mail:
-			<a href="mailto:alexandrsemin2033@gmail.com">alexandrsemin2033@gmail.com</a>
+			<input type="text" value="alexandrsemin2033@gmail.com" id="email" readonly style="outline: none;
+			border: none;
+			width: 350px;" onclick="document.location.href='mailto:alexandrsemin2033@gmail.com';">
+			<div class="tooltip">
+				<button onclick="copyEmail()" onmouseout="outFunc()">
+					<span class="tooltiptext" id="emailToolTip">Copy to clipboard</span>
+					Copy E-mail
+				</button>
+			</div>
 		</h2>
 		<br>
 		<p>
@@ -299,6 +308,19 @@
 </html>
 
 <script>
+	function copyEmail() {
+		var copyText = document.getElementById("email");
+		copyText.select();
+		document.execCommand("copy");
+
+		var tooltip = document.getElementById("emailToolTip");
+		tooltip.innerHTML = "Copied";
+	}
+
+	function updateEmail() {
+		var tooltip = document.getElementById("emailToolTip");
+		tooltip.innerHTML = "Copy to clipboard";
+	}
 </script>
 
 </html>
