@@ -284,7 +284,7 @@
 			border: none;
 			width: 350px;" onclick="document.location.href='mailto:alexandrsemin2033@gmail.com';">
 			<div class="tooltip">
-				<button onclick="copyEmail()" onmouseout="outFunc()">
+				<button onclick="copyEmail()" onmouseout="updateEmail()">
 					<span class="tooltiptext" id="emailToolTip">Copy to clipboard</span>
 					Copy E-mail
 				</button>
@@ -318,10 +318,6 @@
 		var tooltip = document.getElementById("emailToolTip");
 		tooltip.innerHTML = "Copy to clipboard";
 	}
-
-	document.addEventListener("DOMContentLoaded", function (event) {
-		DarkReader.auto()
-	});
 </script>
 
 </html>
