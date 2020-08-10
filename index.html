@@ -3,7 +3,7 @@
 
 <script>
 	DarkReader.setFetchMethod(window.fetch)
-	DarkReader.auto()
+	DarkReader.enable()
 </script>
 
 <html>
@@ -175,6 +175,15 @@
 			opacity: 1;
 		}
 	</style>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-175018740-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() { dataLayer.push(arguments); }
+		gtag('js', new Date());
+
+		gtag('config', 'UA-175018740-1');
+	</script>
 </head>
 
 <body>
@@ -182,7 +191,7 @@
 		<h1>Alexandr Semin</h1>
 		<h3>@rus_anonym</h3>
 		<div id="social">
-			<div class="description">Описание </div>
+			<div class="description"></div>
 			<div class="social github">
 				<a href="https://github.com/RusAnonym" target="_blank" class="social_description"
 					data-title="GitHub — крупнейший веб-сервис для хостинга IT-проектов и их совместной разработки.">
