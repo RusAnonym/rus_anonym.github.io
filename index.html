@@ -168,7 +168,6 @@
 					<img src="/images/socials/telegram.png">
 				</a>
 			</div>
-			<p></p>
 			<div class="social">
 				<a href="https://www.facebook.com/rus.anonym" target="_blank" class="social_description"
 					data-title="Facebook — крупнейшая социальная сеть в мире.">
@@ -220,6 +219,19 @@
 					<img src="/images/socials/steam.png">
 				</a>
 			</div>
+			<div class="social">
+				<a href="https://users.playground.ru/2444466/" target="_blank" class="social_description"
+					data-title="PlayGround.ru — веб-сайт, русскоязычное интернет-издание и игровой сервер.">
+					<img src="/images/socials/playground.png">
+				</a>
+			</div>
+			<div class="social">
+				<a href="https://worldoftanks.ru/ru/community/accounts/91518416-_3JIou_xJIe6uIIIeK_/" target="_blank"
+					class="social_description"
+					data-title="World of Tanks — клиентская массовая многопользовательская онлайн-игра в реальном времени в жанре аркадного танкового симулятора, в которой представлены боевые машины середины XX века. Разработана игра белорусской студией Wargaming.net.">
+					<img src="/images/socials/wot.png">
+				</a>
+			</div>
 		</div>
 		<h2>E-mail:
 			<select id="email" readonly style="outline: none;
@@ -230,11 +242,11 @@
 				<option>alexandrsemin2033@mail.ru</option>
 				<option>alexandrsemin2033@protonmail.com</option>
 			</select>
+			<button onclick="document.location.href='mailto:' + getEmail();">
+				<span></span>
+				Send message
+			</button>
 			<div class="tooltip">
-				<button onclick="document.location.href='mailto:' + getEmail();">
-					<span></span>
-					Send message
-				</button>
 				<button onclick="copyEmail()" onmouseout="updateEmail()">
 					<span class="tooltiptext" id="emailToolTip">Copy to clipboard</span>
 					Copy E-mail
