@@ -214,12 +214,27 @@
 					<img src="/images/socials/youtube.png">
 				</a>
 			</div>
+			<div class="social">
+				<a href="https://steamcommunity.com/id/rus_anonym/" target="_blank" class="social_description"
+					data-title="Steam — онлайн-сервис цифрового распространения компьютерных игр и программ, разработанный и поддерживаемый компанией Valve.">
+					<img src="/images/socials/steam.png">
+				</a>
+			</div>
 		</div>
 		<h2>E-mail:
-			<input type="text" value="alexandrsemin2033@gmail.com" id="email" readonly style="outline: none;
+			<select id="email" readonly style="outline: none;
 			border: none;
-			width: 350px;" onclick="document.location.href='mailto:alexandrsemin2033@gmail.com';">
+			width: 400px;">
+				<option>alexandrsemin2033@gmail.com</option>
+				<option>alexandr.semin2033@yandex.ru</option>
+				<option>alexandrsemin2033@mail.ru</option>
+				<option>alexandrsemin2033@protonmail.com</option>
+			</select>
 			<div class="tooltip">
+				<button onclick="document.location.href='mailto:' + getEmail();">
+					<span></span>
+					Send message
+				</button>
 				<button onclick="copyEmail()" onmouseout="updateEmail()">
 					<span class="tooltiptext" id="emailToolTip">Copy to clipboard</span>
 					Copy E-mail
@@ -241,14 +256,41 @@
 </html>
 
 <script>
+	function getEmail() {
+		return document.querySelector("#email").selectedOptions[0].textContent;
+	}
+
 	function copyEmail() {
-		document.getElementById("email").select();
-		document.execCommand("copy");
+		fallbackCopyTextToClipboard(getEmail());
 		document.getElementById("emailToolTip").innerHTML = "Copied";
 	}
 
 	function updateEmail() {
 		document.getElementById("emailToolTip").innerHTML = "Copy to clipboard";;
+	}
+
+	function fallbackCopyTextToClipboard(text) {
+		var textArea = document.createElement("textarea");
+		textArea.value = text;
+
+		// Avoid scrolling to bottom
+		textArea.style.top = "0";
+		textArea.style.left = "0";
+		textArea.style.position = "fixed";
+
+		document.body.appendChild(textArea);
+		textArea.focus();
+		textArea.select();
+
+		try {
+			var successful = document.execCommand('copy');
+			var msg = successful ? 'successful' : 'unsuccessful';
+			console.log('Fallback: Copying text command was ' + msg);
+		} catch (err) {
+			console.error('Fallback: Oops, unable to copy', err);
+		}
+
+		document.body.removeChild(textArea);
 	}
 </script>
 
