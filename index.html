@@ -41,7 +41,7 @@
 			text-align: center;
 			margin-top: 5%;
 		}
-		
+
 		.description {
 			padding: 10px;
 			margin: 0 10px 10px 0;
@@ -241,17 +241,13 @@
 
 <script>
 	function copyEmail() {
-		var copyText = document.getElementById("email");
-		copyText.select();
+		document.getElementById("email").select();
 		document.execCommand("copy");
-
-		var tooltip = document.getElementById("emailToolTip");
-		tooltip.innerHTML = "Copied";
+		document.getElementById("emailToolTip").innerHTML = "Copied";
 	}
 
 	function updateEmail() {
-		var tooltip = document.getElementById("emailToolTip");
-		tooltip.innerHTML = "Copy to clipboard";
+		document.getElementById("emailToolTip").innerHTML = "Copy to clipboard";;
 	}
 </script>
 
