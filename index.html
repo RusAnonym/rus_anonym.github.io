@@ -226,6 +226,13 @@
 				</a>
 			</div>
 			<div class="social">
+				<a target="_blank" class="social_description"
+					data-title="Discord — проприетарный бесплатный мессенджер с поддержкой VoIP, видеоконференций, предназначенный для использования различными сообществами по интересам, наиболее популярен у геймеров и учащихся."
+					onclick="copyDiscord();">
+					<img src="/images/socials/discord.png">
+				</a>
+			</div>
+			<div class="social">
 				<a href="https://worldoftanks.ru/ru/community/accounts/91518416-_3JIou_xJIe6uIIIeK_/" target="_blank"
 					class="social_description"
 					data-title="World of Tanks — клиентская массовая многопользовательская онлайн-игра в реальном времени в жанре аркадного танкового симулятора, в которой представлены боевые машины середины XX века. Разработана игра белорусской студией Wargaming.net.">
@@ -238,6 +245,24 @@
 					<img src="/images/socials/icq.png">
 				</a>
 			</div>
+			<div class="social">
+				<a href="https://4pda.ru/forum/index.php?showuser=8270750" target="_blank" class="social_description"
+					data-title="4PDA — российский сайт о мобильной электронике, один из наиболее посещаемых сайтов в данной тематике.">
+					<img src="/images/socials/4pda.png">
+				</a>
+			</div>
+			<div class="social">
+				<a href="https://pikabu.ru/@RussianAnonymous" target="_blank" class="social_description"
+					data-title="Пикабу́ — русскоязычное информационно-развлекательное сообщество.">
+					<img src="/images/socials/pikabu.png">
+				</a>
+			</div>
+			<div class="social">
+				<a href="https://www.reddit.com/user/rus_anonym" target="_blank" class="social_description"
+					data-title="Reddit — социальный новостной сайт, на котором зарегистрированные пользователи могут размещать ссылки на какую-либо понравившуюся информацию в интернете.">
+					<img src="/images/socials/reddit.png">
+				</a>
+			</div>
 		</div>
 		<h2>E-mail:
 			<select id="email" readonly style="outline: none;
@@ -247,6 +272,7 @@
 				<option>alexandr.semin2033@yandex.ru</option>
 				<option>alexandrsemin2033@mail.ru</option>
 				<option>alexandrsemin2033@protonmail.com</option>
+				<option>anonymous_rus@outlook.com</option>
 			</select>
 			<button onclick="document.location.href='mailto:' + getEmail();">
 				<span></span>
@@ -274,6 +300,9 @@
 </html>
 
 <script>
+	let discordTimer = null;
+
+
 	function getEmail() {
 		return document.querySelector("#email").selectedOptions[0].textContent;
 	}
@@ -290,25 +319,38 @@
 	function fallbackCopyTextToClipboard(text) {
 		var textArea = document.createElement("textarea");
 		textArea.value = text;
-
-		// Avoid scrolling to bottom
 		textArea.style.top = "0";
 		textArea.style.left = "0";
 		textArea.style.position = "fixed";
-
 		document.body.appendChild(textArea);
 		textArea.focus();
 		textArea.select();
-
 		try {
 			var successful = document.execCommand('copy');
 			var msg = successful ? 'successful' : 'unsuccessful';
-			console.log('Fallback: Copying text command was ' + msg);
 		} catch (err) {
-			console.error('Fallback: Oops, unable to copy', err);
 		}
-
 		document.body.removeChild(textArea);
+	}
+
+	function copyDiscord() {
+		if (discordTimer) {
+			clearTimeout(discordTimer);
+		}
+		let title = document.querySelector("#social > div:nth-child(17) > a").dataset.title;
+		let arrayWithPhrase = [`Скопировано!`, `Двойное копирование!`, `Тройное копирование!`, `Безумие!`, `Домирование!`, `Мегакопирование!`, `Неудержимый!`, `Полный улёт!`, `Чудовищное копирование!`, `Божественно!`, `БОЛЕЕ, ЧЕМ БОЖЕСТВЕННО!!!`]
+		let index = arrayWithPhrase.findIndex(x => x === title);
+		let newTitle = arrayWithPhrase[0];
+		if (index !== -1 && index + 1 !== arrayWithPhrase.length) {
+			newTitle = arrayWithPhrase[index + 1];
+		} else if (index + 1 === arrayWithPhrase.length) {
+			newTitle = arrayWithPhrase[index];
+		}
+		document.querySelector("#social > div:nth-child(17) > a").dataset.title = newTitle;
+		fallbackCopyTextToClipboard("rus_anonym#2685");
+		discordTimer = setTimeout(() => {
+			document.querySelector("#social > div:nth-child(17) > a").dataset.title = "Discord — проприетарный бесплатный мессенджер с поддержкой VoIP, видеоконференций, предназначенный для использования различными сообществами по интересам, наиболее популярен у геймеров и учащихся.";
+		}, 1500);
 	}
 </script>
 
