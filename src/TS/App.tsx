@@ -3,7 +3,6 @@ import React from "react";
 import Jumbotron from "react-bootstrap/Jumbotron";
 import Container from "react-bootstrap/Container";
 
-import ToastsShowcase from "./toast";
 import Social from "./socials";
 
 const App: React.FC = () => {

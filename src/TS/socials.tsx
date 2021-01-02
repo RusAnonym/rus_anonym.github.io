@@ -3,6 +3,7 @@ import React from "react";
 import Image from "react-bootstrap/Image";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 
 import FourPDA from "../PNG/socials/4pda.png";
 import Discord from "../PNG/socials/discord.png";
@@ -133,17 +134,16 @@ const Socials: Record<
 
 function generateImageLink(data: { img: string; name: string; link: string }) {
 	return (
-		<div
-			className="description"
-			data-title={data.name}
-			style={{
-				maxWidth: "64px",
-				maxHeight: "64px",
-			}}
-		>
-			<a href={data.link} target="_blank" rel="noopener noreferrer">
-				<Image src={data.img} fluid></Image>
-			</a>
+		<div>
+			<Col className="description">
+				<a href={data.link} target="_blank" rel="noopener noreferrer">
+					<Image
+						src={data.img}
+						fluid
+						style={{ width: "64px", height: "64px" }}
+					></Image>
+				</a>
+			</Col>
 		</div>
 	);
 }
@@ -152,12 +152,15 @@ function main() {
 	return (
 		<Container>
 			<Row className="justify-content-md-center">
-				<div>
-					<div>
-						{generateImageLink(Socials.GitHub)}
-						{generateImageLink(Socials.WakaTime)}
-					</div>
-				</div>
+				{generateImageLink(Socials.GitHub)}
+				{generateImageLink(Socials.WakaTime)}
+			</Row>
+			<Row className="justify-content-md-center">
+				{generateImageLink(Socials.VK)}
+				{generateImageLink(Socials.Telegram)}
+				{generateImageLink(Socials.Facebook)}
+				{generateImageLink(Socials.Instagram)}
+				{generateImageLink(Socials.Twitter)}
 			</Row>
 		</Container>
 	);
