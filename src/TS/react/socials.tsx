@@ -5,28 +5,30 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
-import FourPDA from "../PNG/socials/4pda.png";
-import Discord from "../PNG/socials/discord.png";
-import Facebook from "../PNG/socials/facebook.png";
-import GitHub from "../PNG/socials/github.png";
-import ICQ from "../PNG/socials/icq.png";
-import Instagram from "../PNG/socials/instagram.png";
-import LinkedIn from "../PNG/socials/linkedIn.png";
-import Pikabu from "../PNG/socials/pikabu.png";
-import Pinterest from "../PNG/socials/pinterest.png";
-import Playground from "../PNG/socials/playground.png";
-import Reddit from "../PNG/socials/reddit.png";
-import Skype from "../PNG/socials/skype.png";
-import Steam from "../PNG/socials/steam.png";
-import Telegram from "../PNG/socials/telegram.png";
-import Twitter from "../PNG/socials/twitter.png";
-import VK from "../PNG/socials/vk.png";
-import WakaTime from "../PNG/socials/wakatime.png";
-import WorldOfTanks from "../PNG/socials/wot.png";
-import YouTube from "../PNG/socials/youtube.png";
+import * as Types from "../types/socials";
+
+import FourPDA from "../../PNG/socials/4pda.png";
+import Discord from "../../PNG/socials/discord.png";
+import Facebook from "../../PNG/socials/facebook.png";
+import GitHub from "../../PNG/socials/github.png";
+import ICQ from "../../PNG/socials/icq.png";
+import Instagram from "../../PNG/socials/instagram.png";
+import LinkedIn from "../../PNG/socials/linkedIn.png";
+import Pikabu from "../../PNG/socials/pikabu.png";
+import Pinterest from "../../PNG/socials/pinterest.png";
+import Playground from "../../PNG/socials/playground.png";
+import Reddit from "../../PNG/socials/reddit.png";
+import Skype from "../../PNG/socials/skype.png";
+import Steam from "../../PNG/socials/steam.png";
+import Telegram from "../../PNG/socials/telegram.png";
+import Twitter from "../../PNG/socials/twitter.png";
+import VK from "../../PNG/socials/vk.png";
+import WakaTime from "../../PNG/socials/wakatime.png";
+import WorldOfTanks from "../../PNG/socials/wot.png";
+import YouTube from "../../PNG/socials/youtube.png";
 
 const Socials: Record<
-	string,
+	Types.Socials,
 	{
 		img: string;
 		name: string;
@@ -155,12 +157,31 @@ function main() {
 				{generateImageLink(Socials.GitHub)}
 				{generateImageLink(Socials.WakaTime)}
 			</Row>
+			<p></p>
 			<Row className="justify-content-md-center">
 				{generateImageLink(Socials.VK)}
 				{generateImageLink(Socials.Telegram)}
 				{generateImageLink(Socials.Facebook)}
 				{generateImageLink(Socials.Instagram)}
 				{generateImageLink(Socials.Twitter)}
+			</Row>
+			<p></p>
+			<Row className="justify-content-md-center">
+				{generateImageLink(Socials.LinkedIn)}
+				{generateImageLink(Socials.Pinterest)}
+				{generateImageLink(Socials.Skype)}
+				{generateImageLink(Socials.YouTube)}
+				{generateImageLink(Socials.Steam)}
+				{generateImageLink(Socials.Playground)}
+			</Row>
+			<p></p>
+			<Row className="justify-content-md-center">
+				{generateImageLink(Socials.Discord)}
+				{generateImageLink(Socials.WorldOfTanks)}
+				{generateImageLink(Socials.ICQ)}
+				{generateImageLink(Socials.FourPDA)}
+				{generateImageLink(Socials.Pikabu)}
+				{generateImageLink(Socials.Reddit)}
 			</Row>
 		</Container>
 	);
