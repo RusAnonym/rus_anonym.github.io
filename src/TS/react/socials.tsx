@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 
 import Image from "react-bootstrap/Image";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import OverlayTrigger from "react-bootstrap/OverlayTrigger";
+import Popover from "react-bootstrap/Popover";
+import Button from "react-bootstrap/Button";
 
 import * as Types from "../types/socials";
 
@@ -150,41 +153,108 @@ function generateImageLink(data: { img: string; name: string; link: string }) {
 	);
 }
 
-function main() {
-	return (
-		<Container>
-			<Row className="justify-content-md-center">
-				{generateImageLink(Socials.GitHub)}
-				{generateImageLink(Socials.WakaTime)}
-			</Row>
-			<p></p>
-			<Row className="justify-content-md-center">
-				{generateImageLink(Socials.VK)}
-				{generateImageLink(Socials.Telegram)}
-				{generateImageLink(Socials.Facebook)}
-				{generateImageLink(Socials.Instagram)}
-				{generateImageLink(Socials.Twitter)}
-			</Row>
-			<p></p>
-			<Row className="justify-content-md-center">
-				{generateImageLink(Socials.LinkedIn)}
-				{generateImageLink(Socials.Pinterest)}
-				{generateImageLink(Socials.Skype)}
-				{generateImageLink(Socials.YouTube)}
-				{generateImageLink(Socials.Steam)}
-				{generateImageLink(Socials.Playground)}
-			</Row>
-			<p></p>
-			<Row className="justify-content-md-center">
-				{generateImageLink(Socials.Discord)}
-				{generateImageLink(Socials.WorldOfTanks)}
-				{generateImageLink(Socials.ICQ)}
-				{generateImageLink(Socials.FourPDA)}
-				{generateImageLink(Socials.Pikabu)}
-				{generateImageLink(Socials.Reddit)}
-			</Row>
-		</Container>
-	);
+function fallbackCopyTextToClipboard(text: string) {
+	let textArea = document.createElement("textarea");
+	textArea.value = text;
+	textArea.style.top = "0";
+	textArea.style.left = "0";
+	textArea.style.position = "fixed";
+	document.body.appendChild(textArea);
+	textArea.focus();
+	textArea.select();
+	document.execCommand("copy");
+	document.body.removeChild(textArea);
 }
+
+const DiscordButton = () => {
+	const [isCopy, copyTag] = useState(false);
+
+	const renderTooltip = (props: any) => {
+		return (
+			<Popover id="discord-description" rootClose {...props}>
+				<Popover.Title as="h3">My Discord</Popover.Title>
+				<Popover.Content>
+					My tag in Discord:
+					<br></br>
+					{Socials.Discord.link}
+					<br></br>
+					<Button
+						variant={isCopy ? "success" : "primary"}
+						style={{ width: "100%" }}
+						disabled={isCopy}
+						onClick={() => {
+							if (!isCopy) {
+								fallbackCopyTextToClipboard(Socials.Discord.link);
+								copyTag(true);
+							}
+						}}
+					>
+						{isCopy ? "Copied" : "Click to copy"}
+					</Button>
+				</Popover.Content>
+			</Popover>
+		);
+	};
+
+	return (
+		<div>
+			<Col className="description">
+				<OverlayTrigger
+					trigger="click"
+					key="discordTooltip"
+					placement="top"
+					rootClose
+					rootCloseEvent="mousedown"
+					overlay={renderTooltip}
+				>
+					<Image
+						src={Socials.Discord.img}
+						fluid
+						style={{ width: "64px", height: "64px" }}
+					></Image>
+				</OverlayTrigger>
+			</Col>
+		</div>
+	);
+};
+
+const main = () => {
+	return (
+		<>
+			<Container>
+				<Row className="justify-content-md-center">
+					{generateImageLink(Socials.GitHub)}
+					{generateImageLink(Socials.WakaTime)}
+				</Row>
+				<p></p>
+				<Row className="justify-content-md-center">
+					{generateImageLink(Socials.VK)}
+					{generateImageLink(Socials.Telegram)}
+					{generateImageLink(Socials.Facebook)}
+					{generateImageLink(Socials.Instagram)}
+					{generateImageLink(Socials.Twitter)}
+				</Row>
+				<p></p>
+				<Row className="justify-content-md-center">
+					{generateImageLink(Socials.LinkedIn)}
+					{generateImageLink(Socials.Pinterest)}
+					{generateImageLink(Socials.Skype)}
+					{generateImageLink(Socials.YouTube)}
+					{generateImageLink(Socials.Steam)}
+					{generateImageLink(Socials.Playground)}
+				</Row>
+				<p></p>
+				<Row className="justify-content-md-center">
+					{DiscordButton()}
+					{generateImageLink(Socials.WorldOfTanks)}
+					{generateImageLink(Socials.ICQ)}
+					{generateImageLink(Socials.FourPDA)}
+					{generateImageLink(Socials.Pikabu)}
+					{generateImageLink(Socials.Reddit)}
+				</Row>
+			</Container>
+		</>
+	);
+};
 
 export default main;
