@@ -11,10 +11,15 @@ const App: React.FC = () => {
 			<h1 className="header" style={{ textAlign: "center" }}>
 				Hello, it's RusAnonym site
 			</h1>
-			<Jumbotron>
-				<h2>Hello</h2>
+			<Jumbotron style={{ textAlign: "center" }}>
+				<h2>
+					I am a novice backend developer from Russia
+					<br></br>I write in JavaScript, TypeScript, Dart
+				</h2>
 			</Jumbotron>
-			<Social />
+			<Jumbotron>
+				<Social />
+			</Jumbotron>
 		</Container>
 	);
 };
