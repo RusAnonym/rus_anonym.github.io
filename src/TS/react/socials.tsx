@@ -29,6 +29,7 @@ import VK from "../../PNG/socials/vk.png";
 import WakaTime from "../../PNG/socials/wakatime.png";
 import WorldOfTanks from "../../PNG/socials/wot.png";
 import YouTube from "../../PNG/socials/youtube.png";
+import NPM from "../../PNG/socials/npm.png";
 
 const Socials: Record<
 	Types.Socials,
@@ -135,6 +136,11 @@ const Socials: Record<
 		name: "Reddit",
 		link: "https://www.reddit.com/user/rus_anonym",
 	},
+	NPM: {
+		img: NPM,
+		name: "NPM",
+		link: "https://www.npmjs.com/~anonymous_rus",
+	},
 };
 
 function generateImageLink(data: { img: string; name: string; link: string }) {
@@ -225,6 +231,7 @@ const main = () => {
 				<Row className="justify-content-md-center">
 					{generateImageLink(Socials.GitHub)}
 					{generateImageLink(Socials.WakaTime)}
+					{generateImageLink(Socials.NPM)}
 				</Row>
 				<p></p>
 				<Row className="justify-content-md-center">
