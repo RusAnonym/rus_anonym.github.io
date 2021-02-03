@@ -7,29 +7,30 @@ import Col from "react-bootstrap/Col";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Popover from "react-bootstrap/Popover";
 import Button from "react-bootstrap/Button";
+import Form from "react-bootstrap/Form";
 
-import * as Types from "../types/socials";
+import * as Types from "../TS/types/socials";
 
-import FourPDA from "../../PNG/socials/4pda.png";
-import Discord from "../../PNG/socials/discord.png";
-import Facebook from "../../PNG/socials/facebook.png";
-import GitHub from "../../PNG/socials/github.png";
-import ICQ from "../../PNG/socials/icq.png";
-import Instagram from "../../PNG/socials/instagram.png";
-import LinkedIn from "../../PNG/socials/linkedIn.png";
-import Pikabu from "../../PNG/socials/pikabu.png";
-import Pinterest from "../../PNG/socials/pinterest.png";
-import Playground from "../../PNG/socials/playground.png";
-import Reddit from "../../PNG/socials/reddit.png";
-import Skype from "../../PNG/socials/skype.png";
-import Steam from "../../PNG/socials/steam.png";
-import Telegram from "../../PNG/socials/telegram.png";
-import Twitter from "../../PNG/socials/twitter.png";
-import VK from "../../PNG/socials/vk.png";
-import WakaTime from "../../PNG/socials/wakatime.png";
-import WorldOfTanks from "../../PNG/socials/wot.png";
-import YouTube from "../../PNG/socials/youtube.png";
-import NPM from "../../PNG/socials/npm.png";
+import FourPDA from "../PNG/socials/4pda.png";
+import Discord from "../PNG/socials/discord.png";
+import Facebook from "../PNG/socials/facebook.png";
+import GitHub from "../PNG/socials/github.png";
+import ICQ from "../PNG/socials/icq.png";
+import Instagram from "../PNG/socials/instagram.png";
+import LinkedIn from "../PNG/socials/linkedIn.png";
+import Pikabu from "../PNG/socials/pikabu.png";
+import Pinterest from "../PNG/socials/pinterest.png";
+import Playground from "../PNG/socials/playground.png";
+import Reddit from "../PNG/socials/reddit.png";
+import Skype from "../PNG/socials/skype.png";
+import Steam from "../PNG/socials/steam.png";
+import Telegram from "../PNG/socials/telegram.png";
+import Twitter from "../PNG/socials/twitter.png";
+import VK from "../PNG/socials/vk.png";
+import WakaTime from "../PNG/socials/wakatime.png";
+import WorldOfTanks from "../PNG/socials/wot.png";
+import YouTube from "../PNG/socials/youtube.png";
+import NPM from "../PNG/socials/npm.png";
 
 const Socials: Record<
 	Types.Socials,
@@ -142,6 +143,13 @@ const Socials: Record<
 		link: "https://www.npmjs.com/~anonymous_rus",
 	},
 };
+
+const EMAILS = [
+	"alexandrsemin2033@gmail.com",
+	"alexandrsemin2033@yandex.ru",
+	"alexandrsemin2033@mail.ru",
+	"alexandrsemin2033@protonmail.com",
+];
 
 function generateImageLink(data: { img: string; name: string; link: string }) {
 	return (
@@ -258,6 +266,17 @@ const main = () => {
 					{generateImageLink(Socials.FourPDA)}
 					{generateImageLink(Socials.Pikabu)}
 					{generateImageLink(Socials.Reddit)}
+				</Row>
+				<p></p>
+				<Row className="justify-content-md-center">
+					<h3>Email: </h3>
+					<div>
+						<Form.Control as="select" style={{ width: "350px" }}>
+							{EMAILS.map(function (email) {
+								return <option>{email}</option>;
+							})}
+						</Form.Control>
+					</div>
 				</Row>
 			</Container>
 		</>
