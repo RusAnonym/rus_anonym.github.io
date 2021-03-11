@@ -17,4 +17,5 @@ export type Socials =
 	| "ICQ"
 	| "FourPDA"
 	| "Pikabu"
-	| "Reddit";
+	| "Reddit"
+	| "NPM";
