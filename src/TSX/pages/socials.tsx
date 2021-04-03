@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 
 import Image from "react-bootstrap/Image";
 import Container from "react-bootstrap/Container";
@@ -238,11 +238,11 @@ const DiscordButton = () => {
 	);
 };
 
-const Main = () => {
+const Main: React.FC = () => {
 	const [selectedEmail, selectEmailHandler] = useState<string>(EMAILS[0]);
 
 	return (
-		<div className="socials">
+		<div className="social">
 			<Container>
 				<Row className="justify-content-md-center">
 					{generateImageLink(Socials.GitHub)}
