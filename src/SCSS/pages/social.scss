@@ -1,4 +1,19 @@
 .social {
+	.iconsList {
+		flex-flow: row wrap;
+		.icons {
+			flex: 1 64px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-wrap: wrap;
+
+			.icon {
+				padding: 10px 0;
+			}
+		}
+	}
+
 	.email {
 		display: flex;
 		justify-content: center;
@@ -11,6 +26,15 @@
 
 		.copyButton {
 			height: 40px;
+		}
+	}
+}
+
+@media (max-width: 800px) {
+	.social {
+		.iconsList {
+			flex-direction: column;
+			text-align: center;
 		}
 	}
 }

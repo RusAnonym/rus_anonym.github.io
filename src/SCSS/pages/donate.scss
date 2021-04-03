@@ -2,4 +2,12 @@
 	display: flex;
 	justify-content: center;
 	align-self: center;
+	flex-direction: row;
+}
+
+@media (max-width: 800px) {
+	.donate {
+		flex-direction: column;
+		text-align: center;
+	}
 }

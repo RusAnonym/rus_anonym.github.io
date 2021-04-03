@@ -159,7 +159,7 @@ const EMAILS = [
 
 function generateImageLink(data: { img: string; name: string; link: string }) {
 	return (
-		<div>
+		<div className="icon">
 			<Col className="description">
 				<a href={data.link} target="_blank" rel="noopener noreferrer">
 					<Image
@@ -191,28 +191,30 @@ const DiscordButton = () => {
 
 	const renderTooltip = (props: any) => {
 		return (
-			<Popover id="discord-description" rootClose {...props}>
-				<Popover.Title as="h3">My Discord</Popover.Title>
-				<Popover.Content>
-					My tag in Discord:
-					<br />
-					{Socials.Discord.link}
-					<br />
-					<Button
-						variant={isCopy ? "success" : "primary"}
-						style={{ width: "100%" }}
-						disabled={isCopy}
-						onClick={() => {
-							if (!isCopy) {
-								fallbackCopyTextToClipboard(Socials.Discord.link);
-								copyTag(true);
-							}
-						}}
-					>
-						{isCopy ? "Copied" : "Click to copy"}
-					</Button>
-				</Popover.Content>
-			</Popover>
+			<div className="icon">
+				<Popover id="discord-description" rootClose {...props}>
+					<Popover.Title as="h3">My Discord</Popover.Title>
+					<Popover.Content>
+						My tag in Discord:
+						<br />
+						{Socials.Discord.link}
+						<br />
+						<Button
+							variant={isCopy ? "success" : "primary"}
+							style={{ width: "100%" }}
+							disabled={isCopy}
+							onClick={() => {
+								if (!isCopy) {
+									fallbackCopyTextToClipboard(Socials.Discord.link);
+									copyTag(true);
+								}
+							}}
+						>
+							{isCopy ? "Copied" : "Click to copy"}
+						</Button>
+					</Popover.Content>
+				</Popover>
+			</div>
 		);
 	};
 
@@ -244,38 +246,40 @@ const Main: React.FC = () => {
 	return (
 		<div className="social">
 			<Container>
-				<Row className="justify-content-md-center">
-					{generateImageLink(Socials.GitHub)}
-					{generateImageLink(Socials.WakaTime)}
-					{generateImageLink(Socials.NPM)}
-				</Row>
-				<p />
-				<Row className="justify-content-md-center">
-					{generateImageLink(Socials.VK)}
-					{generateImageLink(Socials.Telegram)}
-					{generateImageLink(Socials.Facebook)}
-					{generateImageLink(Socials.Instagram)}
-					{generateImageLink(Socials.Twitter)}
-					{generateImageLink(Socials.WhatsApp)}
-				</Row>
-				<p />
-				<Row className="justify-content-md-center">
-					{generateImageLink(Socials.LinkedIn)}
-					{generateImageLink(Socials.Pinterest)}
-					{generateImageLink(Socials.Skype)}
-					{generateImageLink(Socials.YouTube)}
-					{generateImageLink(Socials.Steam)}
-					{generateImageLink(Socials.Playground)}
-				</Row>
-				<p />
-				<Row className="justify-content-md-center">
-					{DiscordButton()}
-					{generateImageLink(Socials.WorldOfTanks)}
-					{generateImageLink(Socials.ICQ)}
-					{generateImageLink(Socials.FourPDA)}
-					{generateImageLink(Socials.Pikabu)}
-					{generateImageLink(Socials.Reddit)}
-				</Row>
+				<div className="iconsList">
+					<div className="icons">
+						{generateImageLink(Socials.GitHub)}
+						{generateImageLink(Socials.WakaTime)}
+						{generateImageLink(Socials.NPM)}
+					</div>
+
+					<div className="icons">
+						{generateImageLink(Socials.VK)}
+						{generateImageLink(Socials.Telegram)}
+						{generateImageLink(Socials.Facebook)}
+						{generateImageLink(Socials.Instagram)}
+						{generateImageLink(Socials.Twitter)}
+						{generateImageLink(Socials.WhatsApp)}
+					</div>
+
+					<div className="icons">
+						{generateImageLink(Socials.LinkedIn)}
+						{generateImageLink(Socials.Pinterest)}
+						{generateImageLink(Socials.Skype)}
+						{generateImageLink(Socials.YouTube)}
+						{generateImageLink(Socials.Steam)}
+						{generateImageLink(Socials.Playground)}
+					</div>
+
+					<div className="icons">
+						{DiscordButton()}
+						{generateImageLink(Socials.WorldOfTanks)}
+						{generateImageLink(Socials.ICQ)}
+						{generateImageLink(Socials.FourPDA)}
+						{generateImageLink(Socials.Pikabu)}
+						{generateImageLink(Socials.Reddit)}
+					</div>
+				</div>
 				<p />
 				<Row className="justify-content-md-center">
 					<div className="email">
