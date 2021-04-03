@@ -1,0 +1,16 @@
+.socials {
+	.email {
+		display: flex;
+		justify-content: center;
+		align-self: center;
+
+		.selector {
+			width: 350px;
+			height: 40px;
+		}
+
+		.copyButton {
+			height: 40px;
+		}
+	}
+}
