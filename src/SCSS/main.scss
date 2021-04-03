@@ -1,16 +1,11 @@
+@import "./plugins/fonts.scss";
+@import "./plugins/texts.scss";
+
 @import "./pages/social.scss";
 @import "./pages/donate.scss";
 
-@import "./plugins/texts.scss";
-
-@font-face {
-	font-family: "VK-Sans";
-	src: local("../Fonts/vk-sans.ttf");
-}
-
 * {
 	font-family: VK-Sans;
-	font-weight: bold;
 }
 
 :not(input):not(textarea),
