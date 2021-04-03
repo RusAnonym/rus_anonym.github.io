@@ -18,4 +18,5 @@ export type Socials =
 	| "FourPDA"
 	| "Pikabu"
 	| "Reddit"
-	| "NPM";
+	| "NPM"
+	| "WhatsApp";
