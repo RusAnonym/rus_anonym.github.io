@@ -4,6 +4,7 @@ import Jumbotron from "react-bootstrap/Jumbotron";
 import Container from "react-bootstrap/Container";
 
 import Social from "./pages/socials";
+import Donate from "./pages/donate";
 
 const App: React.FC = () => {
 	return (
@@ -19,6 +20,9 @@ const App: React.FC = () => {
 			</Jumbotron>
 			<Jumbotron>
 				<Social />
+			</Jumbotron>
+			<Jumbotron>
+				<Donate />
 			</Jumbotron>
 		</Container>
 	);
