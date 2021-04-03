@@ -1,38 +1,36 @@
-@import "./plugins/discord.scss";
-
 @font-face {
-   font-family: "VK-Sans";
-  src: local("../Fonts/vk-sans.ttf");
+	font-family: "VK-Sans";
+	src: local("../Fonts/vk-sans.ttf");
 }
 
 * {
-  font-family: VK-Sans;
+	font-family: VK-Sans;
 }
 
 :not(input):not(textarea),
 :not(input):not(textarea)::after,
 :not(input):not(textarea)::before {
-  -webkit-user-select: none;
-  user-select: none;
+	-webkit-user-select: none;
+	user-select: none;
 }
 input,
 button,
 textarea,
 :focus {
-  outline: none;
+	outline: none;
 }
 
 ::-webkit-scrollbar {
-  display: none;
+	display: none;
 }
 
 a:not([draggable="true"]),
 img:not([draggable="true"]) {
-  -webkit-user-drag: none;
+	-webkit-user-drag: none;
 }
 a[href^="http://"],
 a[href^="https://"],
 a[href^="ftp://"]
 {
-  -webkit-user-drag: auto;
+	-webkit-user-drag: auto;
 }
