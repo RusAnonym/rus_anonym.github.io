@@ -9,29 +9,29 @@ import Popover from "react-bootstrap/Popover";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 
-import * as Types from "../../TS/types/socials";
+import * as Types from "../../../../TS/types/socials";
 
-import FourPDA from "../../PNG/socials/4pda.png";
-import Discord from "../../PNG/socials/discord.png";
-import Facebook from "../../PNG/socials/facebook.png";
-import GitHub from "../../PNG/socials/github.png";
-import ICQ from "../../PNG/socials/icq.png";
-import Instagram from "../../PNG/socials/instagram.png";
-import LinkedIn from "../../PNG/socials/linkedIn.png";
-import Pikabu from "../../PNG/socials/pikabu.png";
-import Pinterest from "../../PNG/socials/pinterest.png";
-import Playground from "../../PNG/socials/playground.png";
-import Reddit from "../../PNG/socials/reddit.png";
-import Skype from "../../PNG/socials/skype.png";
-import Steam from "../../PNG/socials/steam.png";
-import Telegram from "../../PNG/socials/telegram.png";
-import Twitter from "../../PNG/socials/twitter.png";
-import VK from "../../PNG/socials/vk.png";
-import WakaTime from "../../PNG/socials/wakatime.png";
-import WorldOfTanks from "../../PNG/socials/wot.png";
-import YouTube from "../../PNG/socials/youtube.png";
-import NPM from "../../PNG/socials/npm.png";
-import WhatsApp from "../../PNG/socials/whatsapp.png";
+import FourPDA from "../../../../PNG/socials/4pda.png";
+import Discord from "../../../../PNG/socials/discord.png";
+import Facebook from "../../../../PNG/socials/facebook.png";
+import GitHub from "../../../../PNG/socials/github.png";
+import ICQ from "../../../../PNG/socials/icq.png";
+import Instagram from "../../../../PNG/socials/instagram.png";
+import LinkedIn from "../../../../PNG/socials/linkedIn.png";
+import Pikabu from "../../../../PNG/socials/pikabu.png";
+import Pinterest from "../../../../PNG/socials/pinterest.png";
+import Playground from "../../../../PNG/socials/playground.png";
+import Reddit from "../../../../PNG/socials/reddit.png";
+import Skype from "../../../../PNG/socials/skype.png";
+import Steam from "../../../../PNG/socials/steam.png";
+import Telegram from "../../../../PNG/socials/telegram.png";
+import Twitter from "../../../../PNG/socials/twitter.png";
+import VK from "../../../../PNG/socials/vk.png";
+import WakaTime from "../../../../PNG/socials/wakatime.png";
+import WorldOfTanks from "../../../../PNG/socials/wot.png";
+import YouTube from "../../../../PNG/socials/youtube.png";
+import NPM from "../../../../PNG/socials/npm.png";
+import WhatsApp from "../../../../PNG/socials/whatsapp.png";
 
 const Socials: Record<
 	Types.Socials,

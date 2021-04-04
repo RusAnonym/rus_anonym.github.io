@@ -3,11 +3,11 @@ import React from "react";
 import Image from "react-bootstrap/Image";
 import Col from "react-bootstrap/Col";
 
-import * as Types from "../../TS/types/donate";
+import * as Types from "../../../../TS/types/donate";
 
-import Tinkoff from "../../PNG/donate/tinkoff.png";
-import QIWI from "../../PNG/donate/qiwi.png";
-import YooMoney from "../../PNG/donate/yoomoney.png";
+import Tinkoff from "../../../../PNG/donate/tinkoff.png";
+import QIWI from "../../../../PNG/donate/qiwi.png";
+import YooMoney from "../../../../PNG/donate/yoomoney.png";
 
 const DonateServices: Record<
 	Types.DonateServices,
