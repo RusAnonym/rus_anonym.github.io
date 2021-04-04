@@ -189,10 +189,10 @@ function fallbackCopyTextToClipboard(text: string) {
 const DiscordButton = () => {
 	const [isCopy, copyTag] = useState(false);
 
-	const renderTooltip = (props: any) => {
+	const renderTooltip = (props: unknown) => {
 		return (
 			<div className="icon">
-				<Popover id="discord-description" rootClose {...props}>
+				<Popover id="discord-description" {...props}>
 					<Popover.Title as="h3">My Discord</Popover.Title>
 					<Popover.Content>
 						My tag in Discord:
