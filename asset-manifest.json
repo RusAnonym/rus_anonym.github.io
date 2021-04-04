@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/static/css/main.ad91c777.chunk.css",
-    "main.js": "/static/js/main.6159643e.chunk.js",
-    "main.js.map": "/static/js/main.6159643e.chunk.js.map",
+    "main.js": "/static/js/main.df913eea.chunk.js",
+    "main.js.map": "/static/js/main.df913eea.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.cc8c8f36.js",
     "runtime-main.js.map": "/static/js/runtime-main.cc8c8f36.js.map",
     "static/css/2.4c97ca4f.chunk.css": "/static/css/2.4c97ca4f.chunk.css",
@@ -13,20 +13,22 @@
     "static/css/main.ad91c777.chunk.css.map": "/static/css/main.ad91c777.chunk.css.map",
     "static/js/2.8d390406.chunk.js.LICENSE.txt": "/static/js/2.8d390406.chunk.js.LICENSE.txt",
     "static/media/4pda.aaad4606.png": "/static/media/4pda.aaad4606.png",
-    "static/media/discord.9fad43d7.png": "/static/media/discord.9fad43d7.png",
+    "static/media/discord.b5bd5243.png": "/static/media/discord.b5bd5243.png",
     "static/media/facebook.5b4225fa.png": "/static/media/facebook.5b4225fa.png",
     "static/media/github.363cb5ed.png": "/static/media/github.363cb5ed.png",
     "static/media/icq.5c3bb023.png": "/static/media/icq.5c3bb023.png",
     "static/media/instagram.f7b3dff3.png": "/static/media/instagram.f7b3dff3.png",
-    "static/media/linkedIn.a705a2bc.png": "/static/media/linkedIn.a705a2bc.png",
+    "static/media/linkedIn.e65fd24a.png": "/static/media/linkedIn.e65fd24a.png",
     "static/media/pikabu.73ee40c5.png": "/static/media/pikabu.73ee40c5.png",
+    "static/media/pinterest.777aceca.png": "/static/media/pinterest.777aceca.png",
     "static/media/playground.6b88564c.png": "/static/media/playground.6b88564c.png",
     "static/media/qiwi.908d7b19.png": "/static/media/qiwi.908d7b19.png",
     "static/media/reddit.5bc4b693.png": "/static/media/reddit.5bc4b693.png",
-    "static/media/skype.62867d7c.png": "/static/media/skype.62867d7c.png",
-    "static/media/steam.3abd8528.png": "/static/media/steam.3abd8528.png",
+    "static/media/skype.9f50272b.png": "/static/media/skype.9f50272b.png",
+    "static/media/steam.a7eaff26.png": "/static/media/steam.a7eaff26.png",
     "static/media/telegram.9b366870.png": "/static/media/telegram.9b366870.png",
     "static/media/tinkoff.c30a11cc.png": "/static/media/tinkoff.c30a11cc.png",
+    "static/media/twitter.ddf5c5ce.png": "/static/media/twitter.ddf5c5ce.png",
     "static/media/vk.a2e4c123.png": "/static/media/vk.a2e4c123.png",
     "static/media/whatsapp.0c9a6df9.png": "/static/media/whatsapp.0c9a6df9.png",
     "static/media/wot.4c0d2e96.png": "/static/media/wot.4c0d2e96.png"
@@ -36,6 +38,6 @@
     "static/css/2.4c97ca4f.chunk.css",
     "static/js/2.8d390406.chunk.js",
     "static/css/main.ad91c777.chunk.css",
-    "static/js/main.6159643e.chunk.js"
+    "static/js/main.df913eea.chunk.js"
   ]
 }
