@@ -7,8 +7,11 @@ import * as SocialsTypes from "../../../TS/types/socials";
 
 interface Creator {
 	name: DonateTypes.DonateServices | SocialsTypes.Socials | string;
-	creator: string;
 	link: string;
+	creator: {
+		name: string;
+		link: string;
+	};
 	distributor: {
 		name: string;
 		link: string;
@@ -18,8 +21,11 @@ interface Creator {
 const Creators: Creator[] = [
 	{
 		name: "WhatsApp Icon",
-		creator: "Freepik",
-		link: "https://www.freepik.com",
+		link: "https://www.flaticon.com/free-icon/whatsapp_1384055",
+		creator: {
+			name: "Freepik",
+			link: "https://www.freepik.com",
+		},
 		distributor: {
 			name: "Flaticon",
 			link: "https://www.flaticon.com/",
@@ -27,11 +33,63 @@ const Creators: Creator[] = [
 	},
 	{
 		name: "Twitter Icon",
-		creator: "Pixel perfect",
-		link: "https://icon54.com/",
+		link: "https://www.flaticon.com/free-icon/twitter_889147",
+		creator: {
+			name: "Pixel perfect",
+			link: "https://icon54.com/",
+		},
 		distributor: {
 			name: "Flaticon",
 			link: "https://www.flaticon.com/",
+		},
+	},
+	{
+		name: "LinkedIn Icon",
+		link: "https://www.flaticon.com/free-icon/linkedin_1409945",
+		creator: {
+			name: "Freepik",
+			link: "https://www.freepik.com",
+		},
+		distributor: {
+			name: "Flaticon",
+			link: "https://www.flaticon.com/",
+		},
+	},
+	{
+		name: "Skype Icon",
+		link: "https://www.flaticon.com/free-icon/skype_733570",
+		creator: {
+			name: "Pixel perfect",
+			link: "https://icon54.com/",
+		},
+		distributor: {
+			name: "Flaticon",
+			link: "https://www.flaticon.com/",
+		},
+	},
+
+	{
+		name: "Steam Icon",
+		link: "https://www.flaticon.com/free-icon/steam_220223",
+		creator: {
+			name: "Smashicons",
+			link: "https://smashicons.com/",
+		},
+		distributor: {
+			name: "Flaticon",
+			link: "https://www.flaticon.com/",
+		},
+	},
+	{
+		name: "Discord Icon",
+		link: "https://www.freepnglogos.com/images/discord-logo-png-7617.html",
+		creator: {
+			name: "freepnglogos",
+			link: "https://www.freepnglogos.com/",
+		},
+		distributor: {
+			name: "freepnglogos",
+			link: "https://www.freepnglogos.com/",
 		},
 	},
 ];
@@ -39,10 +97,14 @@ const Creators: Creator[] = [
 const generateCreatorLink = (creatorData: Creator) => {
 	return (
 		<tr>
-			<td>{creatorData.name}</td>
 			<td>
 				<a href={creatorData.link} target="_blank" rel="noreferrer">
-					{creatorData.creator}
+					{creatorData.name}
+				</a>
+			</td>
+			<td>
+				<a href={creatorData.creator.link} target="_blank" rel="noreferrer">
+					{creatorData.creator.name}
 				</a>
 			</td>
 			<td>
