@@ -1,29 +1,29 @@
 import React from "react";
+import { HashRouter as Router, Route } from "react-router-dom";
 
-import Jumbotron from "react-bootstrap/Jumbotron";
-import Container from "react-bootstrap/Container";
+import { Nav, Navbar } from "react-bootstrap";
 
-import Social from "./pages/socials";
-import Donate from "./pages/donate";
+import MainPage from "./pages/main/main";
+import AttributionPage from "./pages/attribution/main";
 
 const App: React.FC = () => {
 	return (
-		<Container className="p-3">
-			<h1 className="header centerText">Hello, it's RusAnonym site</h1>
-			<Jumbotron>
-				<h2 className="centerText">
-					I am a novice backend developer from Russia
-					<br></br>I write in JavaScript, TypeScript, Dart
-				</h2>
-			</Jumbotron>
-			<Jumbotron>
-				<Social />
-			</Jumbotron>
-			<Jumbotron>
-				<h3 className="header centerText">Donate to me :)</h3>
-				<Donate />
-			</Jumbotron>
-		</Container>
+		<>
+			<Router basename="/">
+				<Route exact path="/" component={MainPage} />
+				<Route path="/attribution" component={AttributionPage} />
+			</Router>
+			<Navbar expand="lg" fixed="bottom" bg="dark" collapseOnSelect>
+				<Navbar.Brand>RusAnonym Site</Navbar.Brand>
+				<Navbar.Toggle aria-controls="basic-navbar-nav" />
+				<Navbar.Collapse id="basic-navbar-nav">
+					<Nav className="mr-auto">
+						<Nav.Link href="#/">Main Page</Nav.Link>
+						<Nav.Link href="#attribution">Attribution</Nav.Link>
+					</Nav>
+				</Navbar.Collapse>
+			</Navbar>
+		</>
 	);
 };
 

@@ -1,8 +1,10 @@
 @import "./plugins/fonts.scss";
 @import "./plugins/texts.scss";
 
-@import "./pages/social.scss";
-@import "./pages/donate.scss";
+@import "./pages/main/social.scss";
+@import "./pages/main/donate.scss";
+
+@import "./pages/attribution/table.scss";
 
 * {
 	font-family: VK-Sans;
