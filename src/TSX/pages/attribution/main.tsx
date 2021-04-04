@@ -25,6 +25,15 @@ const Creators: Creator[] = [
 			link: "https://www.flaticon.com/",
 		},
 	},
+	{
+		name: "Twitter Icon",
+		creator: "Pixel perfect",
+		link: "https://icon54.com/",
+		distributor: {
+			name: "Flaticon",
+			link: "https://www.flaticon.com/",
+		},
+	},
 ];
 
 const generateCreatorLink = (creatorData: Creator) => {
