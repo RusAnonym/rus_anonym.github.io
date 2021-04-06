@@ -29,7 +29,7 @@ const App: React.FC = () => {
 				<Navbar.Collapse id="basic-navbar-nav">
 					<Nav
 						className="mr-auto"
-						defaultActiveKey={window.document.location.hash}
+						defaultActiveKey={window.document.location.hash || "#/"}
 						fill
 						variant="pills"
 					>
