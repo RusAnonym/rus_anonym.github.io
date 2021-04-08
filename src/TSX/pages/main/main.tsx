@@ -14,7 +14,7 @@ const MainPage: React.FC = () => {
 				<Jumbotron>
 					<h2 className="centerText">
 						I am a novice backend developer from Russia
-						<br></br>I write in JavaScript, TypeScript, Dart
+						<br />I write in JavaScript, TypeScript and Dart
 					</h2>
 				</Jumbotron>
 				<Jumbotron>
