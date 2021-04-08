@@ -1,0 +1,34 @@
+name: Github Pages Publish
+
+on:
+  push:
+    branches: [master]
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Configure Node.js 15
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 15
+
+      - name: Install dependencies
+      - run: npm install --legacy-peer-deps
+
+      - name: Build
+      - run: npm run build
+
+      - name: Deploy
+        run: |
+          git config --global user.name $user_name
+          git config --global user.email $user_email
+          git remote set-url origin https://${github_token}@github.com/${repository}
+          npm run deploy
+        env:
+          user_name: "RusAnonym[Bot]"
+          user_email: "alexandrsemin2033@gmail.com"
+          github_token: ${{ secrets.ACTIONS_DEPLOY_ACCESS_TOKEN }}
+          repository: ${{ secrets.repository }}
