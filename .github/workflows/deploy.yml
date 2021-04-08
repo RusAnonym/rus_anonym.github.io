@@ -31,4 +31,4 @@ jobs:
           user_name: "RusAnonym[Bot]"
           user_email: "alexandrsemin2033@gmail.com"
           github_token: ${{ secrets.ACTIONS_DEPLOY_ACCESS_TOKEN }}
-          repository: ${{ secrets.repository }}
+          repository: ${{ github.repository }}
