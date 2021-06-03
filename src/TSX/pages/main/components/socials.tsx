@@ -79,8 +79,7 @@ const Socials: Record<
 	LinkedIn: {
 		img: LinkedIn,
 		name: "LinkedIn",
-		link:
-			"https://www.linkedin.com/in/%D0%B0%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80-%D1%81%D0%B5%D0%BC%D0%B8%D0%BD-6bbb2b1b3/",
+		link: "https://www.linkedin.com/in/%D0%B0%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80-%D1%81%D0%B5%D0%BC%D0%B8%D0%BD-6bbb2b1b3/",
 	},
 	Pinterest: {
 		img: Pinterest,
@@ -115,8 +114,7 @@ const Socials: Record<
 	WorldOfTanks: {
 		img: WorldOfTanks,
 		name: "World Of Tanks",
-		link:
-			"https://worldoftanks.ru/ru/community/accounts/91518416-_3JIou_xJIe6uIIIeK_/",
+		link: "https://worldoftanks.ru/ru/community/accounts/91518416-_3JIou_xJIe6uIIIeK_/",
 	},
 	ICQ: {
 		img: ICQ,
@@ -157,15 +155,20 @@ const EMAILS = [
 	"alexandrsemin2033@protonmail.com",
 ];
 
-function generateImageLink(data: { img: string; name: string; link: string }) {
+function ImageLink(data: { img: string; name: string; link: string }) {
+	const [isLoaded, setLoad] = useState<boolean>(false);
+
 	return (
-		<div className="icon">
+		<div className="icon" style={isLoaded ? {} : { display: "none" }}>
 			<Col className="description">
 				<a href={data.link} target="_blank" rel="noopener noreferrer">
 					<Image
 						src={data.img}
 						fluid
 						style={{ width: "64px", height: "64px" }}
+						onLoad={() => {
+							setLoad(true);
+						}}
 					/>
 				</a>
 			</Col>
@@ -248,36 +251,36 @@ const Main: React.FC = () => {
 			<Container>
 				<div className="iconsList">
 					<div className="icons">
-						{generateImageLink(Socials.GitHub)}
-						{generateImageLink(Socials.WakaTime)}
-						{generateImageLink(Socials.NPM)}
+						{ImageLink(Socials.GitHub)}
+						{ImageLink(Socials.WakaTime)}
+						{ImageLink(Socials.NPM)}
 					</div>
 
 					<div className="icons">
-						{generateImageLink(Socials.VK)}
-						{generateImageLink(Socials.Telegram)}
-						{generateImageLink(Socials.Facebook)}
-						{generateImageLink(Socials.Instagram)}
-						{generateImageLink(Socials.Twitter)}
-						{generateImageLink(Socials.WhatsApp)}
+						{ImageLink(Socials.VK)}
+						{ImageLink(Socials.Telegram)}
+						{ImageLink(Socials.Facebook)}
+						{ImageLink(Socials.Instagram)}
+						{ImageLink(Socials.Twitter)}
+						{ImageLink(Socials.WhatsApp)}
 					</div>
 
 					<div className="icons">
-						{generateImageLink(Socials.LinkedIn)}
-						{generateImageLink(Socials.Pinterest)}
-						{generateImageLink(Socials.Skype)}
-						{generateImageLink(Socials.YouTube)}
-						{generateImageLink(Socials.Steam)}
-						{generateImageLink(Socials.Playground)}
+						{ImageLink(Socials.LinkedIn)}
+						{ImageLink(Socials.Pinterest)}
+						{ImageLink(Socials.Skype)}
+						{ImageLink(Socials.YouTube)}
+						{ImageLink(Socials.Steam)}
+						{ImageLink(Socials.Playground)}
 					</div>
 
 					<div className="icons">
 						{DiscordButton()}
-						{generateImageLink(Socials.WorldOfTanks)}
-						{generateImageLink(Socials.ICQ)}
-						{generateImageLink(Socials.FourPDA)}
-						{generateImageLink(Socials.Pikabu)}
-						{generateImageLink(Socials.Reddit)}
+						{ImageLink(Socials.WorldOfTanks)}
+						{ImageLink(Socials.ICQ)}
+						{ImageLink(Socials.FourPDA)}
+						{ImageLink(Socials.Pikabu)}
+						{ImageLink(Socials.Reddit)}
 					</div>
 				</div>
 				<p />
